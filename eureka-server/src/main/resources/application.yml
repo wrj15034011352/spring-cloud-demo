@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    #是否将自己注册到eureka服务端 由于我自己就是服务端 所以是false
+    register-with-eureka: false
+    #是否从eureka服务端获取服务信息
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  #eureka 保护模式关闭
+  server:
+    enable-self-preservation: false
