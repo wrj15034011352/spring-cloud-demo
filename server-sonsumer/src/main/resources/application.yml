@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: Server-Consumer
+  cloud:
+    loadbalancer:
+      retry:
+        #开启重试机制，即获取服务失败是否从另外一个节点重试，默认false
+        enabled: true
 
 eureka:
   client:
